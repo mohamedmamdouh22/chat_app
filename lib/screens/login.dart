@@ -4,8 +4,8 @@ import 'package:chat_app/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
-
+  Login({Key? key}) : super(key: key);
+  static String id='Login';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +19,10 @@ class Login extends StatelessWidget {
               Color(0xff4f67d8),
             ])),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: ListView(
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(flex: 1,),
+
               Image.asset(
                 'assets/images/login1.png',
                 width: 300,
@@ -30,15 +30,18 @@ class Login extends StatelessWidget {
               ),
               Text(
                 'Login',
+                textAlign: TextAlign.center,
                 style: TextStyle(
+
                   fontSize: 40,
                   fontFamily: 'Pacifico',
                   color: Colors.white,
                 ),
               ),
-              CustomTextField(text: 'User Name',icon: Icon(Icons.person),),
+              SizedBox(height: 50,),
+              CustomTextField(text: 'User Name',icon: Icon(Icons.person)),
               CustomTextField( text:'Password',icon: Icon(Icons.lock)),
-              Spacer(flex: 1,),
+              SizedBox(height: 50,),
               CustomButton(text: 'Login'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -54,12 +57,12 @@ class Login extends StatelessWidget {
                   ),
                 ],
               ),
-              Spacer(flex: 2,),
 
-            ],
-          ),
+
+          ],
         ),
       ),
+    ),
     );
   }
 }

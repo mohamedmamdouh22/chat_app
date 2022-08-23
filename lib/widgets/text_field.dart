@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   CustomTextField({required this.text,required this.icon});
   String text;
+
   Icon icon;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 40),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
       child: TextField(
+
         decoration: InputDecoration(
           prefixIcon: icon,
           filled: true,

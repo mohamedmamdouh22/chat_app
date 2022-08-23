@@ -12,8 +12,11 @@ class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      home: Login(),
+      routes: {
+        Login.id:(context)=>Login(),
+          Register.id:(context)=>Register()
+      },
+      initialRoute: 'Login',
     );
   }
 }
