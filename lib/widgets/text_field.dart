@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
-  CustomTextField({required this.text,required this.icon});
+  CustomTextField({required this.text,required this.icon,required this.onChanged,this.obsecure=false});
   String text;
-
+  Function(String)? onChanged;
   Icon icon;
+  bool obsecure;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
-      child: TextField(
-
+      child: TextFormField(
+        validator: (data){
+          if(data!.isEmpty)
+            {
+              return 'this field is required';
+            }
+        },
+        obscureText: obsecure,
+        onChanged:onChanged ,
         decoration: InputDecoration(
           prefixIcon: icon,
           filled: true,

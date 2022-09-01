@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
-  CustomButton({required this.text});
+  CustomButton({required this.onpressed,required this.text});
   String text;
+  VoidCallback? onpressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,8 +21,9 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         child: MaterialButton(
+
           height: 55,
-          onPressed: () {},
+          onPressed:onpressed,
           child: Text(text,style: TextStyle(color: Colors.white,fontSize: 20,fontFamily: 'Times'),),
 
         ),
